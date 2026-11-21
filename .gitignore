@@ -1,0 +1,33 @@
+# Downloaded source data and derived caches.
+# The loader re-downloads these automatically on first run (two public CSVs,
+# ~47 MB, no account needed), so there is no reason to version them.
+cache/
+
+# Intermediate numpy arrays used only to hand data between modules.
+results/arrays/
+
+# Python
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+.venv/
+venv/
+env/
+
+# LaTeX build products (compile on Overleaf, or locally)
+*.aux
+*.log
+*.out
+*.toc
+*.nav
+*.snm
+*.synctex.gz
+*.fdb_latexmk
+*.fls
+docs/*.pdf
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

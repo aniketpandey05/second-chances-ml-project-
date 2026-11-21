@@ -1,0 +1,117 @@
+field,value,count,share_pct
+breed_group,Domestic Shorthair,57518,35.404
+breed_group,Pit Bull,16531,10.175
+breed_group,Labrador Retriever,13410,8.254
+breed_group,Chihuahua,10903,6.711
+breed_group,German Shepherd,6957,4.282
+breed_group,Domestic Mediumhair,5411,3.331
+breed_group,Australian Cattle Dog,3407,2.097
+breed_group,Terrier (other),3059,1.883
+breed_group,Dachshund,2579,1.587
+breed_group,Siberian Husky,2569,1.581
+breed_group,Domestic Longhair,2475,1.523
+breed_group,Siamese,2340,1.44
+breed_group,Toy breed,2325,1.431
+breed_group,Hound,1925,1.185
+breed_group,Boxer,1851,1.139
+breed_group,Border Collie,1779,1.095
+breed_group,Shepherd (other),1778,1.094
+breed_group,Other,1748,1.076
+breed_group,Poodle,1700,1.046
+breed_group,Great Pyrenees,1561,0.961
+breed_group,Bulldog,1372,0.845
+breed_group,Cur / Lacy / Carolina,1330,0.819
+breed_group,Australian Shepherd,1279,0.787
+breed_group,Schnauzer,1265,0.779
+breed_group,Catahoula,1255,0.772
+breed_group,Pointer,1253,0.771
+breed_group,Beagle,1216,0.748
+breed_group,Yorkshire Terrier,1159,0.713
+breed_group,Jack Russell Terrier,1128,0.694
+breed_group,Rottweiler,987,0.608
+breed_group,Cairn Terrier,954,0.587
+breed_group,Shih Tzu,857,0.528
+breed_group,Cat (other pedigree),771,0.475
+breed_group,Retriever (other),678,0.417
+breed_group,Australian Kelpie,622,0.383
+breed_group,Doberman,536,0.33
+breed_group,Welsh Corgi,448,0.276
+breed_group,Miniature Pinscher,402,0.247
+breed_group,Mastiff,390,0.24
+breed_group,Chow Chow,374,0.23
+breed_group,Spaniel / Setter (other),362,0.223
+breed_group,Cocker Spaniel,337,0.207
+breed_group,Shar Pei,314,0.193
+breed_group,Great Dane,312,0.192
+breed_group,Whippet / Greyhound,290,0.179
+breed_group,Rhodesian Ridgeback,211,0.13
+breed_group,Akita,145,0.089
+breed_group,Basenji,134,0.082
+breed_group,Weimaraner,129,0.079
+breed_group,Dalmatian,125,0.077
+colour_group,Black,41016,25.247
+colour_group,Brown,37278,22.946
+colour_group,White,20980,12.914
+colour_group,Gray/Blue,16215,9.981
+colour_group,Tan/Fawn,14942,9.197
+colour_group,Orange/Red,12714,7.826
+colour_group,Calico/Tortie,9505,5.851
+colour_group,Tricolor,3900,2.401
+colour_group,Cream,3659,2.252
+colour_group,Other,2252,1.386
+colour_pattern,none,103475,63.692
+colour_pattern,tabby,32414,19.952
+colour_pattern,brindle,6135,3.776
+colour_pattern,tricolor,5089,3.132
+colour_pattern,tortie,3603,2.218
+colour_pattern,calico,3346,2.06
+colour_pattern,point,2698,1.661
+colour_pattern,torbie,2589,1.594
+colour_pattern,merle,1394,0.858
+colour_pattern,sable,1191,0.733
+colour_pattern,smoke,345,0.212
+colour_pattern,tiger,151,0.093
+colour_pattern,agouti,31,0.019
+age_band,Adult,48064,29.585
+age_band,Neonate,40467,24.909
+age_band,Young adult,36406,22.409
+age_band,Juvenile,23696,14.586
+age_band,Senior,13819,8.506
+age_band,Unknown,9,0.006
+sex,Male,81399,50.104
+sex,Female,75462,46.449
+sex,Unknown,5600,3.447
+sterilised_at_intake,No,112728,69.388
+sterilised_at_intake,Yes,44133,27.165
+sterilised_at_intake,Unknown,5600,3.447
+intake_type,Stray,116425,71.663
+intake_type,Owner Surrender,34171,21.033
+intake_type,Public Assist,9795,6.029
+intake_type,Abandoned,1826,1.124
+intake_type,Euthanasia Request,243,0.15
+intake_type,Wildlife,1,0.001
+intake_condition,Normal,139802,86.053
+intake_condition,Injured,9174,5.647
+intake_condition,Sick,5927,3.648
+intake_condition,Nursing,3718,2.289
+intake_condition,Neonatal,1874,1.154
+intake_condition,Medical,577,0.355
+intake_condition,Aged,521,0.321
+intake_condition,Other,331,0.204
+intake_condition,Pregnant,155,0.095
+intake_condition,Feral,143,0.088
+intake_condition,Behavior,79,0.049
+intake_condition,Med Attn,78,0.048
+intake_condition,Unknown,29,0.018
+intake_condition,Med Urgent,21,0.013
+intake_condition,Parvo,11,0.007
+intake_condition,Neurologic,11,0.007
+intake_condition,Agonal,4,0.002
+intake_condition,Space,4,0.002
+intake_condition,Panleuk,1,0.001
+intake_condition,Congenital,1,0.001
+outcome,Adoption,83866,51.622
+outcome,Transfer,46668,28.726
+outcome,Return to Owner,25466,15.675
+outcome,Euthanasia,4704,2.895
+outcome,Other,1757,1.081

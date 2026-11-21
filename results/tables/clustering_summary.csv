@@ -1,0 +1,10 @@
+algorithm,n_rows,n_clusters,noise_points,noise_pct,ARI,NMI,homogeneity,completeness,silhouette,seconds,dissimilarity,cost,eps_attrs,min_samples
+"K-Means (one-hot, k=8)",6001,8,0,0.0,0.01131,0.04138,0.05761,0.03228,0.16086,0.52,Euclidean on one-hot,,,
+"K-Medoids (Hamming, k=8)",6001,8,0,0.0,0.0181,0.04364,0.06083,0.03402,0.09215,0.12,Hamming,1732.0,,
+"Hierarchical (complete, Hamming)",3000,8,0,0.0,0.0312,0.0476,0.06214,0.03857,0.03673,0.38,Hamming,,,
+"Hierarchical (average, Hamming)",3000,8,0,0.0,0.03727,0.06495,0.05609,0.07715,0.16391,0.48,Hamming,,,
+"Hierarchical (ward, one-hot)",3000,8,0,0.0,0.02448,0.06184,0.08619,0.04821,0.12547,0.83,Euclidean on one-hot,,,
+DBSCAN (<=1 attrs differ),6001,7,1221,20.347,0.03092,0.06485,0.0704,0.06011,0.13919,0.34,Hamming,,1.0,10.0
+DBSCAN (<=2 attrs differ),6001,1,61,1.016,0.00613,0.00565,0.00296,0.05963,,0.42,Hamming,,2.0,10.0
+DBSCAN (<=3 attrs differ),6001,1,1,0.017,0.00037,0.00103,0.00052,0.36532,,0.57,Hamming,,3.0,10.0
+"OPTICS (Hamming, xi)",3000,16,1763,58.767,0.00017,0.04916,0.04768,0.05074,0.16923,37.03,Hamming,,,10.0

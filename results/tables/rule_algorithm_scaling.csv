@@ -1,0 +1,5 @@
+n_transactions,Apriori_seconds,n_itemsets,FP-Growth_seconds,speedup
+20000,1.77,4503,1.78,0.99
+50000,7.26,4494,3.32,2.19
+100000,17.21,4440,5.17,3.33
+162461,44.45,4516,8.8,5.05

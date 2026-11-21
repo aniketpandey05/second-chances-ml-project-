@@ -1,0 +1,12 @@
+field,tree_share_pct,apriori_share_pct,rank_tree,rank_apriori,rank_gap
+condition,32.13,5.81,1,10,9
+intake,18.34,11.27,2,3,1
+sterilised,16.38,8.27,3,6,3
+type,16.02,9.68,4,5,1
+age,13.98,15.14,5,1,4
+sex,1.75,7.57,6,8,2
+mixed,1.14,5.46,7,11,4
+breed,0.19,10.56,8,4,4
+colour,0.06,11.97,9,2,7
+multicolour,0.0,6.34,10,9,1
+pattern,0.0,7.92,10,7,3

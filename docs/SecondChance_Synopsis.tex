@@ -1,0 +1,406 @@
+% SecondChance -- Project Synopsis
+% Compile on Overleaf (overleaf.com) -- New Project > Upload Project, or paste
+% this file in. No local LaTeX installation needed.
+\documentclass[11pt,a4paper]{article}
+
+\usepackage[margin=2.4cm]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{enumitem}
+\usepackage{titlesec}
+\usepackage{xcolor}
+\usepackage[hidelinks]{hyperref}
+\usepackage{graphicx}
+
+\definecolor{jiitblue}{RGB}{23,54,93}
+
+\titleformat{\section}{\color{jiitblue}\normalfont\Large\bfseries}{}{0pt}{}[\vspace{-6pt}\rule{\textwidth}{0.6pt}]
+\titleformat{\subsection}{\normalfont\large\bfseries}{\thesubsection.}{0.5em}{}
+\setlist{nosep,leftmargin=1.4em}
+\renewcommand{\arraystretch}{1.25}
+
+\newcolumntype{L}[1]{>{\raggedright\arraybackslash}p{#1}}
+
+\begin{document}
+\pagestyle{empty}
+
+%% ---------------------------------------------------------------- title page
+\begin{center}
+\vspace*{1.5cm}
+
+% Uncomment once you add the college logo to the project folder:
+% \includegraphics[width=0.28\textwidth]{jiit-logo.png}\\[1.2cm]
+
+{\color{jiitblue}\Large\bfseries JAYPEE INSTITUTE OF INFORMATION TECHNOLOGY}\\[4pt]
+{\large Noida, Uttar Pradesh}\\[2.2cm]
+
+{\large P\,R\,O\,J\,E\,C\,T\quad S\,Y\,N\,O\,P\,S\,I\,S}\\[4pt]
+{\large Machine Learning and Data Mining}\\[1.0cm]
+
+\rule{0.62\textwidth}{0.8pt}\\[0.7cm]
+{\color{jiitblue}\Huge\bfseries SecondChance}\\[0.7cm]
+{\large Mining Attribute Bias in Animal Shelter Outcomes with\\
+Association Rules and Density-Based Clustering}\\[0.6cm]
+\rule{0.62\textwidth}{0.8pt}
+
+\vfill
+
+\begin{minipage}[t]{0.45\textwidth}
+\raggedright
+{\color{jiitblue}\bfseries Submitted to:}\\[6pt]
+Dr. Ashish Mishra
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.45\textwidth}
+\raggedleft
+{\color{jiitblue}\bfseries Submitted by:}\\[6pt]
+\begin{tabular}{@{}lr@{}}
+Sambhav Ghildiyal & 23803005 \\
+Aniket Pandey & 23803008 \\
+Aditya Bansal & 23803009 \\
+Mudit Maheshwari & 23803017 \\
+\end{tabular}
+\end{minipage}
+
+\vspace{1.4cm}
+November 2026
+\end{center}
+
+\newpage
+\pagestyle{plain}
+\setcounter{page}{1}
+
+%% ------------------------------------------------------------------ abstract
+\section*{Abstract}
+\rule{\textwidth}{0.6pt}\vspace{4pt}
+
+Municipal animal shelters decide, under permanent capacity pressure, which animals
+are promoted for adoption, transferred to partner organisations, returned to owners,
+or euthanised. Practitioners hold strong beliefs about what determines an animal's
+fate: that black animals are passed over, that bully-breed labels are disqualifying,
+that senior animals are effectively unadoptable. These beliefs already shape policy,
+from shelter photography guidelines to the removal of breed labels from kennel cards.
+They are rarely quantified at scale.
+
+\textbf{SecondChance} is an end-to-end data mining study of \textbf{173{,}775 outcome
+records} published by Austin Animal Center. The project will (i) mine association
+rules over animal attributes to surface interpretable outcome patterns; (ii) benchmark
+five classification algorithms predicting an animal's outcome under a leakage-safe
+temporal split; (iii) segment the population with five clustering algorithms, using
+dissimilarity measures appropriate to categorical data rather than defaulting to
+Euclidean distance; (iv) test whether animals that density-based clustering labels as
+noise --- that is, atypical animals --- experience measurably worse outcomes; and
+(v) quantify the marginal effect of colour, breed group and age on adoption while
+controlling for the remaining attributes. The deliverables are a reproducible pipeline,
+a comparative study of the classical data mining toolkit on a large categorical
+dataset, and an interpretable outcome-risk tool that returns a prediction together
+with the rule that produced it.
+
+%% --------------------------------------------------------------- motivation
+\section*{Problem Statement and Motivation}
+
+Shelter intake exceeds adoption capacity almost everywhere, so triage is unavoidable
+and its consequences are terminal. Staff decide which animals receive foster
+placement, promotion or extended holding time, and those decisions are guided largely
+by experience and folklore rather than by measurement. The widely cited ``black dog
+syndrome'' --- the claim that dark-coated animals wait longer and are adopted less
+often --- is a representative example: it is believed strongly enough to drive
+operational policy, yet reported findings in the literature are mixed, and most studies
+are based on a single shelter over a short window.
+
+A public dataset of 173{,}775 outcomes over more than a decade makes the question
+tractable. Two questions are open:
+
+\begin{enumerate}[label=\textbf{\arabic*.}]
+  \item \textbf{Which attributes actually determine an animal's outcome, and by how
+        much}, once the remaining attributes are controlled for?
+  \item \textbf{Can an adverse outcome be anticipated early enough to act on it}, using
+        only the information recorded when the animal enters the shelter?
+\end{enumerate}
+
+Interpretability is a requirement rather than a preference here. A shelter manager
+cannot act on a risk score; they need the reason behind it in order to change
+something --- a photograph, a kennel card, a transfer request. This makes decision
+trees and association rules the appropriate instruments for the task, and makes a
+comparison against less transparent models a genuine trade-off to measure rather than
+a formality.
+
+%% ---------------------------------------------------------------- objectives
+\section*{Objectives}
+
+\begin{enumerate}[label=\arabic*.]
+  \item Build a reproducible pipeline and exploratory analysis: outcome distribution,
+        trends over time, and normalisation of 3{,}010 free-text breed strings and
+        663 colour strings into analysable categories.
+  \item Mine association rules over animal attributes using Apriori, ranking patterns
+        by lift rather than confidence alone, and report the rule sets that
+        characterise each outcome class.
+  \item Benchmark Decision Tree, Naive Bayes, $k$-Nearest Neighbours, Support Vector
+        Machine and a Neural Network under one protocol, reporting macro-averaged F1
+        because the outcome classes are strongly imbalanced.
+  \item Segment the population with K-Means, K-Medoids, Hierarchical, DBSCAN and
+        OPTICS, using a categorical dissimilarity measure, and compare internal and
+        external cluster validity.
+  \item Test the \emph{atypicality hypothesis}: are animals labelled as noise by
+        DBSCAN and OPTICS over-represented among adverse outcomes?
+  \item Quantify the marginal effect of colour, breed group, age and sterilisation
+        status on adoption probability, and deliver an interpretable outcome-risk tool.
+\end{enumerate}
+
+%% ------------------------------------------------------------------- dataset
+\section*{Dataset}
+
+\begin{center}
+\begin{tabular}{@{}L{3.1cm}L{12.2cm}@{}}
+\toprule
+\textbf{Property} & \textbf{Austin Animal Center} \\
+\midrule
+Outcomes & 173{,}775 outcome events, Oct 2013 -- May 2025, updated continuously \\
+Intakes & 173{,}812 intake events; joins to Outcomes on Animal ID at
+\textbf{99.1\,\%} coverage \\
+Analysed & 162{,}461 dog and cat outcome events after scoping \\
+Features & animal type, breed (3{,}010 free-text strings), colour (663), sex and
+sterilisation status, age, intake type, intake condition \\
+Label & Outcome --- Adoption 83{,}866; Transfer 46{,}668; Return to Owner
+25{,}466; Euthanasia 4{,}704; Other 1{,}757 \\
+Access & Two CSVs from the City of Austin open data portal, 21\,MB and 26\,MB,
+no account or API key required \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\vspace{4pt}
+The data is small enough to process entirely on a laptop CPU; no GPU is required at
+any stage. The complete pipeline reproduces every table and figure in the report in
+under ten minutes.
+
+\subsection*{Three properties of the data that shape the method}
+
+\textbf{Mixed timezone offsets.} The \texttt{DateTime} column carries mixed offsets
+in both files, so it must be parsed as UTC; otherwise naive and aware timestamps
+cannot be compared at all.
+
+\textbf{Animals return.} About 10\,\% of Animal IDs appear more than once in the
+Intakes file. The join must therefore be per \emph{outcome event}, matched to the
+most recent intake at or before it, rather than one row per animal.
+
+\textbf{The obvious feature leaks the label.} \texttt{Sex upon Outcome} encodes
+sterilisation status, and shelters routinely sterilise animals \emph{as part of}
+preparing them for adoption. Using it as a predictor is circular. All features are
+therefore taken from the \textbf{intake} record, which is also what predicting at
+intake honestly means.
+
+%% --------------------------------------------------------------- methodology
+\section*{Proposed Methodology}
+
+\begin{center}
+\small
+\begin{tabular}{@{}cccccc@{}}
+\toprule
+\textbf{1. Ingest \& EDA} & $\rightarrow$ & \textbf{2. Rule Mining} & $\rightarrow$ &
+\textbf{3. Classification} & \\
+breed/colour normalisation & & Apriori, lift ranking & & five models, temporal split & \\
+\midrule
+\textbf{4. Clustering} & $\rightarrow$ & \textbf{5. Bias \& Tool} & & & \\
+categorical dissimilarity & & marginal effects, risk tool & & & \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\subsection*{1. Preprocessing and Feature Engineering}
+Breed strings are normalised into approximately twenty groups with a separate
+mixed-breed indicator; colour strings are decomposed into a primary colour and a
+pattern; age at outcome is parsed from free text into days; the combined sex field is
+split into sex and sterilisation status, which are distinct predictors. Outcome month
+and season are derived, since shelter intake is strongly seasonal. Every normalisation
+rule is recorded in a mapping table reproduced in the report, so the transformation is
+auditable rather than implicit.
+
+\subsection*{2. Association Rule Mining}
+Each animal is represented as a transaction over its attributes, for example
+$\{$\texttt{dog}, \texttt{pit\_bull\_mix}, \texttt{black}, \texttt{adult},
+\texttt{intact\_male}$\}$. Apriori is applied at a range of minimum support
+thresholds, selected from the item frequency distribution rather than chosen
+arbitrarily. Rules are ranked by lift, since confidence alone is misleading when one
+outcome dominates. The resulting rule sets are compared directly against the paths
+learned by the decision tree, which is an independent route to the same kind of
+structure.
+
+\subsection*{3. Classification}
+Decision Tree, Gaussian and Categorical Naive Bayes, $k$-Nearest Neighbours, Support
+Vector Machine (linear and RBF) and a feedforward neural network trained with
+backpropagation are evaluated on an identical test set. Categorical attributes are
+one-hot encoded; class weighting addresses imbalance. Evaluation uses stratified
+$k$-fold cross-validation together with a \textbf{temporal holdout} --- training on
+earlier years and testing on later ones --- because a random split would allow the
+model to learn period-specific shelter policy and report an optimistic result.
+
+\subsection*{4. Clustering with Categorical Dissimilarity}
+The attributes are categorical, so Euclidean distance is not meaningful and the choice
+of dissimilarity is a methodological decision rather than a detail. K-Medoids,
+Hierarchical, DBSCAN and OPTICS all accept an arbitrary precomputed dissimilarity
+matrix and are run with Hamming and Jaccard measures. K-Means cannot: it computes
+means, which requires Euclidean geometry, and the mean of categorical vectors is not
+an animal. K-Means on one-hot encoded data is therefore included deliberately as the
+contrast that demonstrates why medoid-based clustering exists. K-Medoids is
+implemented directly, since \texttt{scikit-learn-extra} is unmaintained and does not
+build on current Python versions.
+
+\subsection*{5. Bias Quantification and Outcome-Risk Tool}
+The marginal effect of each attribute on adoption probability is estimated while
+holding the remaining attributes fixed, which separates genuine attribute effects from
+confounding --- black animals are disproportionately common among certain breed groups,
+so an unadjusted comparison measures the wrong thing. The final deliverable is a tool
+that accepts an animal's attributes and returns an outcome risk together with the
+association rule or decision path responsible for it.
+
+%% ------------------------------------------------------------------- metrics
+\section*{Evaluation Metrics}
+
+\textbf{Macro-averaged F1} is the primary classification metric, because accuracy is
+uninformative when one outcome accounts for roughly half of all records. Per-class
+precision and recall, balanced accuracy and the Matthews Correlation Coefficient are
+also reported. Association rules are assessed by support, confidence and \textbf{lift}.
+Clustering is assessed externally by Adjusted Rand Index and Normalised Mutual
+Information against the outcome labels, internally by silhouette computed on the
+dissimilarity matrix, and by the number of clusters that are near-pure in a single
+outcome class. All results are reported as mean $\pm$ standard deviation over five
+random seeds, alongside the temporal holdout result.
+
+%% --------------------------------------------------------------------- tools
+\section*{Tools and Technology Stack}
+
+\begin{center}
+\begin{tabular}{@{}L{3.6cm}L{11.7cm}@{}}
+\toprule
+\textbf{Layer} & \textbf{Tools} \\
+\midrule
+Language \& environment & Python 3.13, Jupyter, Git / GitHub \\
+Data processing & pandas, NumPy \\
+Association rules & mlxtend (Apriori, FP-Growth) \\
+Machine learning & scikit-learn (trees, Naive Bayes, KNN, SVM, MLP, clustering) \\
+Neural network & PyTorch --- categorical embeddings and a class-weighted loss,
+neither of which \texttt{MLPClassifier} supports; CPU only \\
+Clustering support & SciPy (linkage, dendrograms), custom K-Medoids implementation \\
+Visualisation & Matplotlib \\
+Application & Streamlit outcome-risk tool \\
+Hardware & Laptop CPU throughout; no GPU required \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+%% ----------------------------------------------------------------- work plan
+\section*{Work Plan}
+
+\begin{center}
+\begin{tabular}{@{}cL{11.0cm}c@{}}
+\toprule
+\textbf{Phase} & \textbf{Activities} & \textbf{Duration} \\
+\midrule
+1 & Data ingestion, exploratory analysis, breed and colour normalisation, baseline
+decision tree & Week 1 \\
+2 & Association rule mining, support threshold selection, lift-ranked rule
+interpretation & Week 2 \\
+3 & Classification benchmark, imbalance handling, temporal holdout evaluation & Week 3 \\
+4 & Clustering suite, categorical dissimilarity, atypicality hypothesis test & Week 4 \\
+5 & Bias quantification, outcome-risk tool, report and presentation & Week 5 \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\vspace{6pt}
+\noindent\textbf{Responsibilities.}
+\emph{Sambhav Ghildiyal:} data pipeline, breed and colour normalisation, exploratory analysis
+and all descriptive figures.
+\emph{Aniket Pandey:} association rule mining, support and lift analysis, and the
+comparison between mined rules and decision tree paths.
+\emph{Aditya Bansal:} the five classification algorithms, imbalance handling and the
+temporal evaluation protocol.
+\emph{Mudit Maheshwari:} the five clustering algorithms, categorical dissimilarity measures
+and the atypicality hypothesis.
+All members share the bias quantification, the final report and the presentation.
+
+%% ---------------------------------------------------------------- outcomes
+\section*{Preliminary Results}
+
+The pipeline is implemented and has been run end to end. Early findings:
+
+\textbf{The folk belief does not survive measurement.} Black dogs are adopted
+\emph{more} often than other dogs (+2.77 percentage points). Black cats are adopted
+slightly less (--2.25 pp) and wait about one day longer. After direct
+standardisation for species, age band and intake route, black sits mid-table and
+\emph{white} animals fare worst. ``Black dog syndrome'' is not supported by these
+173{,}775 records.
+
+\textbf{What does matter is age, and then breed label.} Senior dogs are adopted
+23.66 pp less often than non-seniors; senior cats 10.32 pp less. Pit bull type dogs
+are adopted 4.34 pp less --- but wait a median of \textbf{10.0 days against 5.3}.
+The trait that attracts public attention is close to noise; the traits that do not
+are large.
+
+\textbf{Atypical animals fare worse.} Animals that DBSCAN and OPTICS label as noise
+--- unusual attribute combinations, identified with no labels whatsoever --- are
+euthanised at roughly \textbf{2.7 to 3.2 times} the rate of animals that fall inside
+a cluster, and are adopted less often. Labels are used only to score the finding,
+never to produce it.
+
+\textbf{Honest evaluation costs accuracy.} Every classifier degrades under the
+temporal holdout relative to a random split. A random split lets a model learn
+period-specific shelter policy and take credit for it.
+
+\section*{Expected Outcomes}
+
+\begin{itemize}
+  \item A reproducible, open-source pipeline running from the raw public CSVs to a
+        trained, interpretable outcome predictor.
+  \item A quantified answer to a question shelters act on but rarely measure: the
+        effect of colour, breed group and age on adoption, with confounders
+        controlled by direct standardisation.
+  \item A comparison of mined association rules against learned decision tree paths,
+        establishing where two independent methods agree and, more informatively,
+        where and why they do not.
+  \item An empirical test of whether atypical animals, identified without labels by
+        density-based clustering, experience worse outcomes.
+  \item An outcome-risk tool that returns both a prediction and the rule responsible
+        for it, usable in a shelter triage workflow.
+\end{itemize}
+
+%% -------------------------------------------------------------- references
+\section*{References}
+
+\begin{enumerate}[label={[\arabic*]}]
+  \item City of Austin, ``Austin Animal Center Outcomes,'' City of Austin Open Data
+        Portal. [Online]. Available: \url{https://data.austintexas.gov/}
+  \item R. Agrawal and R. Srikant, ``Fast Algorithms for Mining Association Rules,''
+        in \emph{Proc. 20th Int. Conf. Very Large Data Bases (VLDB)}, 1994,
+        pp.~487--499.
+  \item M. Ester, H.-P. Kriegel, J. Sander, and X. Xu, ``A Density-Based Algorithm for
+        Discovering Clusters in Large Spatial Databases with Noise,'' in
+        \emph{Proc. 2nd Int. Conf. Knowledge Discovery and Data Mining (KDD)}, 1996,
+        pp.~226--231.
+  \item M. Ankerst, M. M. Breunig, H.-P. Kriegel, and J. Sander, ``OPTICS: Ordering
+        Points To Identify the Clustering Structure,'' in \emph{Proc. ACM SIGMOD Int.
+        Conf. Management of Data}, 1999, pp.~49--60.
+  \item L. Kaufman and P. J. Rousseeuw, \emph{Finding Groups in Data: An Introduction
+        to Cluster Analysis}. New York: Wiley, 1990.
+  \item Z. Huang, ``Extensions to the $k$-Means Algorithm for Clustering Large Data
+        Sets with Categorical Values,'' \emph{Data Mining and Knowledge Discovery},
+        vol.~2, no.~3, pp.~283--304, 1998.
+  \item F. Pedregosa \emph{et al.}, ``Scikit-learn: Machine Learning in Python,''
+        \emph{Journal of Machine Learning Research}, vol.~12, pp.~2825--2830, 2011.
+  \item S. Raschka, ``MLxtend: Providing machine learning and data science utilities
+        and extensions to Python's scientific computing stack,'' \emph{Journal of Open
+        Source Software}, vol.~3, no.~24, p.~638, 2018.
+\end{enumerate}
+
+\vspace{6pt}
+\noindent\footnotesize\emph{Note to the group: references [2]--[8] are the standard
+primary sources for the algorithms and tools used. Before submission, add two or three
+domain references on shelter adoption outcomes and ``black dog syndrome'' from the
+animal-welfare literature (\emph{Anthrozo\"os} and the \emph{Journal of Applied Animal
+Welfare Science} both publish on this) and verify every citation yourself.}
+
+\end{document}

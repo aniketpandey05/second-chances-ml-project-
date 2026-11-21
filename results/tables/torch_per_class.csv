@@ -1,0 +1,21 @@
+protocol,model,outcome,support,precision,recall,f1
+random,"Torch NN (embeddings, weighted)",Adoption,8260,0.71709,0.46489,0.56408
+random,"Torch NN (embeddings, weighted)",Euthanasia,463,0.14941,0.49244,0.22926
+random,"Torch NN (embeddings, weighted)",Other,173,0.0281,0.3815,0.05234
+random,"Torch NN (embeddings, weighted)",Return to Owner,2508,0.41878,0.79147,0.54774
+random,"Torch NN (embeddings, weighted)",Transfer,4596,0.57438,0.2537,0.35195
+random,"Torch NN (embeddings, unweighted)",Adoption,8260,0.64389,0.84758,0.73182
+random,"Torch NN (embeddings, unweighted)",Euthanasia,463,0.45283,0.10367,0.16872
+random,"Torch NN (embeddings, unweighted)",Other,173,0.0,0.0,0.0
+random,"Torch NN (embeddings, unweighted)",Return to Owner,2508,0.56819,0.59968,0.58351
+random,"Torch NN (embeddings, unweighted)",Transfer,4596,0.615,0.31767,0.41894
+temporal,"Torch NN (embeddings, weighted)",Adoption,11198,0.81234,0.47508,0.59954
+temporal,"Torch NN (embeddings, weighted)",Euthanasia,390,0.0881,0.43077,0.14628
+temporal,"Torch NN (embeddings, weighted)",Other,249,0.02136,0.249,0.03934
+temporal,"Torch NN (embeddings, weighted)",Return to Owner,1523,0.30179,0.73079,0.42717
+temporal,"Torch NN (embeddings, weighted)",Transfer,4483,0.4907,0.30605,0.37697
+temporal,"Torch NN (embeddings, unweighted)",Adoption,11198,0.75418,0.77317,0.76356
+temporal,"Torch NN (embeddings, unweighted)",Euthanasia,390,0.25243,0.13333,0.1745
+temporal,"Torch NN (embeddings, unweighted)",Other,249,0.0,0.0,0.0
+temporal,"Torch NN (embeddings, unweighted)",Return to Owner,1523,0.41305,0.5568,0.47427
+temporal,"Torch NN (embeddings, unweighted)",Transfer,4483,0.49781,0.45572,0.47584

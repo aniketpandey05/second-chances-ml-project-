@@ -1,0 +1,9 @@
+cluster,size,dominant_outcome,purity,euthanasia_pct,median_stay_days
+1,2445,Adoption,0.5284,1.718,6.1
+0,1841,Adoption,0.5568,2.607,8.2
+-1,1221,Adoption,0.4652,5.651,5.15
+2,306,Adoption,0.5915,2.288,9.07
+3,141,Transfer,0.8794,4.965,0.23
+4,29,Adoption,0.5862,3.448,5.2
+5,10,Adoption,0.9,0.0,6.85
+6,8,Adoption,0.625,0.0,10.55

@@ -1,0 +1,9 @@
+cluster,size,dominant_outcome,purity,euthanasia_pct,median_stay_days,medoid_animal
+1,1038,Adoption,0.5405,3.083,5.88,"Cat, Domestic Shorthair, Brown, Juvenile, Stray"
+4,990,Adoption,0.5232,3.636,6.97,"Cat, Domestic Shorthair, Black, Neonate, Stray"
+7,944,Adoption,0.5148,2.225,6.91,"Dog, Pit Bull, Tan/Fawn, Adult, Stray"
+3,705,Adoption,0.5631,2.837,8.74,"Cat, Domestic Shorthair, Brown, Neonate, Stray"
+5,695,Return to Owner,0.3827,2.59,4.91,"Dog, Labrador Retriever, White, Adult, Stray"
+2,665,Adoption,0.5459,2.406,6.87,"Dog, Pit Bull, White, Young adult, Owner Surrender"
+0,500,Adoption,0.556,3.6,6.82,"Cat, Domestic Shorthair, Brown, Adult, Owner Surrender"
+6,464,Adoption,0.5022,2.802,6.16,"Dog, Pit Bull, Black, Adult, Owner Surrender"

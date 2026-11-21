@@ -1,0 +1,81 @@
+protocol,model,outcome,support,precision,recall,f1
+random,Decision Tree,Adoption,8260,0.71611,0.41441,0.525
+random,Decision Tree,Euthanasia,463,0.12748,0.48596,0.20197
+random,Decision Tree,Other,173,0.0237,0.43931,0.04497
+random,Decision Tree,Return to Owner,2508,0.41889,0.73923,0.53476
+random,Decision Tree,Transfer,4596,0.59769,0.23695,0.33936
+random,Naive Bayes (Bernoulli),Adoption,8260,0.657,0.46913,0.54739
+random,Naive Bayes (Bernoulli),Euthanasia,463,0.24251,0.17495,0.20326
+random,Naive Bayes (Bernoulli),Other,173,0.08654,0.10405,0.09449
+random,Naive Bayes (Bernoulli),Return to Owner,2508,0.37573,0.74083,0.49859
+random,Naive Bayes (Bernoulli),Transfer,4596,0.44442,0.44626,0.44534
+random,KNN (k=15),Adoption,8260,0.60517,0.84225,0.70429
+random,KNN (k=15),Euthanasia,463,0.28571,0.01728,0.03259
+random,KNN (k=15),Other,173,0.0,0.0,0.0
+random,KNN (k=15),Return to Owner,2508,0.57416,0.44298,0.50011
+random,KNN (k=15),Transfer,4596,0.55175,0.30505,0.39288
+random,SVM (linear),Adoption,8260,0.66595,0.74964,0.70532
+random,SVM (linear),Euthanasia,463,0.18182,0.43197,0.25592
+random,SVM (linear),Other,173,0.04298,0.08671,0.05747
+random,SVM (linear),Return to Owner,2508,0.47764,0.69856,0.56736
+random,SVM (linear),Transfer,4596,0.6858,0.23651,0.35172
+random,SVM (RBF),Adoption,8260,0.70393,0.53826,0.61004
+random,SVM (RBF),Euthanasia,463,0.18534,0.47516,0.26667
+random,SVM (RBF),Other,173,0.01667,0.12139,0.02931
+random,SVM (RBF),Return to Owner,2508,0.43111,0.77472,0.55396
+random,SVM (RBF),Transfer,4596,0.55201,0.32789,0.41141
+random,"Neural Net (MLP, backprop)",Adoption,8260,0.64697,0.84818,0.73404
+random,"Neural Net (MLP, backprop)",Euthanasia,463,0.46,0.09935,0.16341
+random,"Neural Net (MLP, backprop)",Other,173,0.0,0.0,0.0
+random,"Neural Net (MLP, backprop)",Return to Owner,2508,0.57796,0.57935,0.57865
+random,"Neural Net (MLP, backprop)",Transfer,4596,0.60461,0.33638,0.43227
+temporal,Decision Tree,Adoption,11198,0.80852,0.44044,0.57024
+temporal,Decision Tree,Euthanasia,390,0.06837,0.30256,0.11153
+temporal,Decision Tree,Other,249,0.02632,0.41767,0.04952
+temporal,Decision Tree,Return to Owner,1523,0.31453,0.64806,0.42351
+temporal,Decision Tree,Transfer,4483,0.4515,0.29489,0.35677
+temporal,Naive Bayes (Bernoulli),Adoption,11198,0.7537,0.38694,0.51136
+temporal,Naive Bayes (Bernoulli),Euthanasia,390,0.13462,0.17949,0.15385
+temporal,Naive Bayes (Bernoulli),Other,249,0.06777,0.16466,0.09602
+temporal,Naive Bayes (Bernoulli),Return to Owner,1523,0.26214,0.67695,0.37793
+temporal,Naive Bayes (Bernoulli),Transfer,4483,0.32277,0.50658,0.39431
+temporal,KNN (k=15),Adoption,11198,0.70196,0.79166,0.74411
+temporal,KNN (k=15),Euthanasia,390,0.21569,0.02821,0.04989
+temporal,KNN (k=15),Other,249,0.0,0.0,0.0
+temporal,KNN (k=15),Return to Owner,1523,0.41033,0.4432,0.42614
+temporal,KNN (k=15),Transfer,4483,0.42423,0.33281,0.373
+temporal,SVM (linear),Adoption,11198,0.77581,0.69191,0.73146
+temporal,SVM (linear),Euthanasia,390,0.10033,0.39231,0.15979
+temporal,SVM (linear),Other,249,0.04138,0.12048,0.0616
+temporal,SVM (linear),Return to Owner,1523,0.34451,0.65463,0.45144
+temporal,SVM (linear),Transfer,4483,0.55383,0.33504,0.41751
+temporal,SVM (RBF),Adoption,11198,0.79968,0.49303,0.60999
+temporal,SVM (RBF),Euthanasia,390,0.10149,0.42051,0.16351
+temporal,SVM (RBF),Other,249,0.01268,0.08032,0.02191
+temporal,SVM (RBF),Return to Owner,1523,0.29761,0.72751,0.42242
+temporal,SVM (RBF),Transfer,4483,0.45687,0.40999,0.43217
+temporal,"Neural Net (MLP, backprop)",Adoption,11198,0.75085,0.76889,0.75976
+temporal,"Neural Net (MLP, backprop)",Euthanasia,390,0.25405,0.12051,0.16348
+temporal,"Neural Net (MLP, backprop)",Other,249,0.0,0.0,0.0
+temporal,"Neural Net (MLP, backprop)",Return to Owner,1523,0.41329,0.55548,0.47395
+temporal,"Neural Net (MLP, backprop)",Transfer,4483,0.48938,0.45238,0.47015
+random,"Torch NN (embeddings, weighted)",Adoption,8260,0.71709,0.46489,0.56408
+random,"Torch NN (embeddings, weighted)",Euthanasia,463,0.14941,0.49244,0.22926
+random,"Torch NN (embeddings, weighted)",Other,173,0.0281,0.3815,0.05234
+random,"Torch NN (embeddings, weighted)",Return to Owner,2508,0.41878,0.79147,0.54774
+random,"Torch NN (embeddings, weighted)",Transfer,4596,0.57438,0.2537,0.35195
+random,"Torch NN (embeddings, unweighted)",Adoption,8260,0.64389,0.84758,0.73182
+random,"Torch NN (embeddings, unweighted)",Euthanasia,463,0.45283,0.10367,0.16872
+random,"Torch NN (embeddings, unweighted)",Other,173,0.0,0.0,0.0
+random,"Torch NN (embeddings, unweighted)",Return to Owner,2508,0.56819,0.59968,0.58351
+random,"Torch NN (embeddings, unweighted)",Transfer,4596,0.615,0.31767,0.41894
+temporal,"Torch NN (embeddings, weighted)",Adoption,11198,0.81234,0.47508,0.59954
+temporal,"Torch NN (embeddings, weighted)",Euthanasia,390,0.0881,0.43077,0.14628
+temporal,"Torch NN (embeddings, weighted)",Other,249,0.02136,0.249,0.03934
+temporal,"Torch NN (embeddings, weighted)",Return to Owner,1523,0.30179,0.73079,0.42717
+temporal,"Torch NN (embeddings, weighted)",Transfer,4483,0.4907,0.30605,0.37697
+temporal,"Torch NN (embeddings, unweighted)",Adoption,11198,0.75418,0.77317,0.76356
+temporal,"Torch NN (embeddings, unweighted)",Euthanasia,390,0.25243,0.13333,0.1745
+temporal,"Torch NN (embeddings, unweighted)",Other,249,0.0,0.0,0.0
+temporal,"Torch NN (embeddings, unweighted)",Return to Owner,1523,0.41305,0.5568,0.47427
+temporal,"Torch NN (embeddings, unweighted)",Transfer,4483,0.49781,0.45572,0.47584

@@ -1,0 +1,7 @@
+claim,group_n,group_adoption_pct,others_adoption_pct,adoption_gap_pp,group_median_stay,others_median_stay,group_euthanasia_pct,others_euthanasia_pct,note
+Black cats vs other cats,15898,50.31,52.55,-2.25,8.11,7.13,4.08,3.56,the black cat superstition
+Black dogs vs other dogs,25118,53.35,50.58,2.77,6.05,5.98,2.09,2.4,'black dog syndrome'
+Pit bull type vs other dogs,16531,47.75,52.09,-4.34,10.02,5.27,4.35,1.89,breed-label stigma
+Senior vs non-senior dogs,10019,30.18,53.85,-23.66,4.0,6.09,5.5,1.94,age bias
+Senior vs non-senior cats,3800,42.29,52.61,-10.32,8.2,7.19,12.74,3.15,age bias
+Mixed breed vs purebred dogs,74526,52.17,48.06,4.11,6.01,5.93,2.36,2.16,mixed-breed stigma

@@ -1,0 +1,46 @@
+|--- intake_condition_Normal <= 0.50
+|   |--- age_band_Neonate <= 0.50
+|   |   |--- animal_type_Cat <= 0.50
+|   |   |   |--- age_band_Senior <= 0.50
+|   |   |   |   |--- class: Euthanasia
+|   |   |   |--- age_band_Senior >  0.50
+|   |   |   |   |--- class: Euthanasia
+|   |   |--- animal_type_Cat >  0.50
+|   |   |   |--- sterilised_at_intake_Unknown <= 0.50
+|   |   |   |   |--- class: Euthanasia
+|   |   |   |--- sterilised_at_intake_Unknown >  0.50
+|   |   |   |   |--- class: Other
+|   |--- age_band_Neonate >  0.50
+|   |   |--- intake_condition_Injured <= 0.50
+|   |   |   |--- intake_condition_Sick <= 0.50
+|   |   |   |   |--- class: Other
+|   |   |   |--- intake_condition_Sick >  0.50
+|   |   |   |   |--- class: Other
+|   |   |--- intake_condition_Injured >  0.50
+|   |   |   |--- sterilised_at_intake_Unknown <= 0.50
+|   |   |   |   |--- class: Euthanasia
+|   |   |   |--- sterilised_at_intake_Unknown >  0.50
+|   |   |   |   |--- class: Euthanasia
+|--- intake_condition_Normal >  0.50
+|   |--- age_band_Neonate <= 0.50
+|   |   |--- intake_type_Owner Surrender <= 0.50
+|   |   |   |--- sterilised_at_intake_Yes <= 0.50
+|   |   |   |   |--- class: Return to Owner
+|   |   |   |--- sterilised_at_intake_Yes >  0.50
+|   |   |   |   |--- class: Return to Owner
+|   |   |--- intake_type_Owner Surrender >  0.50
+|   |   |   |--- breed_group_Pit Bull <= 0.50
+|   |   |   |   |--- class: Adoption
+|   |   |   |--- breed_group_Pit Bull >  0.50
+|   |   |   |   |--- class: Euthanasia
+|   |--- age_band_Neonate >  0.50
+|   |   |--- sterilised_at_intake_Unknown <= 0.50
+|   |   |   |--- animal_type_Dog <= 0.50
+|   |   |   |   |--- class: Other
+|   |   |   |--- animal_type_Dog >  0.50
+|   |   |   |   |--- class: Adoption
+|   |   |--- sterilised_at_intake_Unknown >  0.50
+|   |   |   |--- breed_group_Domestic Shorthair <= 0.50
+|   |   |   |   |--- class: Other
+|   |   |   |--- breed_group_Domestic Shorthair >  0.50
+|   |   |   |   |--- class: Transfer
