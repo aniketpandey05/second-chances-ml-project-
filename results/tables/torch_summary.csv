@@ -1,5 +1,0 @@
-protocol,model,train_rows,test_rows,accuracy,balanced_accuracy,macro_f1,weighted_f1,mcc,fit_seconds,predict_seconds
-random,"Torch NN (embeddings, weighted)",54400,16000,0.45531,0.4768,0.34907,0.48536,0.28449,32.94,0.03
-random,"Torch NN (embeddings, unweighted)",54400,16000,0.62581,0.37372,0.3806,0.59449,0.37302,56.69,0.03
-temporal,"Torch NN (embeddings, weighted)",52833,17843,0.45032,0.43834,0.31786,0.51118,0.2483,48.35,0.04
-temporal,"Torch NN (embeddings, unweighted)",52833,17843,0.65017,0.3838,0.37763,0.64305,0.33853,87.38,0.04

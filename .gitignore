@@ -31,3 +31,11 @@ docs/*.pdf
 Thumbs.db
 .vscode/
 .idea/
+
+# Generated tables that duplicate others or are pure intermediates:
+#   torch_*.csv   merged into supervised_summary.csv / supervised_per_class.csv
+#   tree_paths.csv  intermediate for compare.py; the results are in
+#                   rules_vs_tree.csv and rules_vs_tree_summary.csv
+results/tables/torch_summary.csv
+results/tables/torch_per_class.csv
+results/tables/tree_paths.csv
